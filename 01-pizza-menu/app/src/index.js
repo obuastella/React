@@ -55,7 +55,13 @@ function App() {
 }
 
 function Pizza() {
-  return <h2>Pizza</h2>;
+  return (
+    <div>
+      <img src="/pizzas/spinaci.jpg" alt="Pizza spinachi" />
+      <h2>Pizza Spinaci</h2>
+      <p>Tomato, mozarella, spinach, and ricotta cheese</p>
+    </div>
+  );
 }
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
