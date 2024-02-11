@@ -50,6 +50,7 @@ function App() {
     <div>
       <h1>Hello React!</h1>
       <Pizza />
+      <Pizza />
     </div>
   );
 }
@@ -63,6 +64,12 @@ function Pizza() {
     </div>
   );
 }
+
+function Header() {}
+
+function Menu() {}
+
+function Footer() {}
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
