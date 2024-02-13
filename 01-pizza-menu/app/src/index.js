@@ -55,17 +55,6 @@ function App() {
   );
 }
 
-function Pizza() {
-  return (
-    <div>
-      {pizzaData.map((data) => data.name)}
-      <img src="/pizzas/spinaci.jpg" alt="Pizza spinachi" />
-      <h2>Pizza Spinaci</h2>
-      <p>Tomato, mozarella, spinach, and ricotta cheese</p>
-    </div>
-  );
-}
-
 function Header() {
   return <h1>Fast React Pizza Co.</h1>;
 }
@@ -74,9 +63,29 @@ function Menu() {
   return (
     <div>
       <h2>Our Menu</h2>
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <Pizza
+        name="/pizzas/spinaci.jpg"
+        photoName="Pizza Spinaci"
+        ingredients="Tomato, mozarella, spinach, and ricotta cheese"
+        price={10}
+      />
+      <Pizza
+        name="/pizzas/funghi.jpg"
+        photoName="Pizza Funghi"
+        ingredients="Tomato, moshroms"
+        price={12}
+      />
+    </div>
+  );
+}
+
+function Pizza(props) {
+  return (
+    <div>
+      <img src={props.name} alt={props.name} />
+      <h2>{props.photoName}</h2>
+      <p>{props.ingredients}</p>
+      <span>{props.price + 3}</span>
     </div>
   );
 }
