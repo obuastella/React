@@ -48,9 +48,10 @@ const pizzaData = [
 function App() {
   return (
     <div>
-      <h1>Hello React!</h1>
+      <Header />
       <Pizza />
       <Pizza />
+      <Footer />
     </div>
   );
 }
@@ -58,6 +59,7 @@ function App() {
 function Pizza() {
   return (
     <div>
+      {pizzaData.map((data) => data.name)}
       <img src="/pizzas/spinaci.jpg" alt="Pizza spinachi" />
       <h2>Pizza Spinaci</h2>
       <p>Tomato, mozarella, spinach, and ricotta cheese</p>
@@ -65,11 +67,15 @@ function Pizza() {
   );
 }
 
-function Header() {}
+function Header() {
+  return <h1>Fast React Pizza Co.</h1>;
+}
 
 function Menu() {}
 
-function Footer() {}
+function Footer() {
+  return React.createElement("footer", null, "We're currently open!");
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
