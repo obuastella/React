@@ -109,7 +109,8 @@ function Footer() {
   console.log(hour);
   return (
     <footer className="footer">
-      {new Date().toLocaleTimeString()} We're currently open!
+      {isOpen && "We are currently open!"}
+      {/* {new Date().toLocaleTimeString()} We're currently open! */}
     </footer>
   );
   // return React.createElement("footer", null, "We're currently open!");
