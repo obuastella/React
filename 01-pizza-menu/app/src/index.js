@@ -65,8 +65,8 @@ function Header() {
 }
 
 function Menu() {
-  // const pizzas = pizzaData;
-  const pizzas = [];
+  const pizzas = pizzaData;
+  // const pizzas = [];
   const numPizzas = pizzas.length;
   // An empty array is a falsy value.
   return (
@@ -100,6 +100,7 @@ function Menu() {
 }
 
 function Pizza(props) {
+  if (props.pizzaObj.soldOut) return null;
   return (
     <li className="pizza">
       <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
@@ -117,6 +118,10 @@ function Footer() {
   const isOpen = hour >= openHour && hour <= closeHour;
   console.log(isOpen);
   console.log(hour);
+
+  if (!isOpen) {
+    return <p>CLOSED</p>;
+  }
   return (
     <footer className="footer">
       {isOpen ? (
