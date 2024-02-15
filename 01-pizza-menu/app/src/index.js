@@ -65,8 +65,8 @@ function Header() {
 }
 
 function Menu() {
-  // const pizzas = pizzaData;
-  const pizzas = [];
+  const pizzas = pizzaData;
+  // const pizzas = [];
   const numPizzas = pizzas.length;
   // An empty array is a falsy value.
   return (
@@ -107,13 +107,15 @@ function Menu() {
 }
 
 function Pizza({ pizzaObj }) {
-  if (pizzaObj.soldOut) return null;
+  // if (pizzaObj.soldOut) return null;
   return (
-    <li className="pizza">
+    <li className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""}`}>
       <img src={pizzaObj.photoName} alt={pizzaObj.name} />
       <h2>{pizzaObj.name}</h2>
       <p>{pizzaObj.ingredients}</p>
-      <span>{pizzaObj.price + 3}</span>
+      {/* {pizzaObj.soldOut ? <span>Sold out</span> : <span>{pizzaObj.price}</span>} */}
+      {/* the below is more cleaner */}
+      <span>{pizzaObj.soldOut ? "SOLD OUT" : pizzaObj.price}</span>
     </li>
   );
 }
